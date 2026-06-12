@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Davis Dirtworks — Excavation &amp; Grading in Davis County, Utah</title>
+<meta name="description" content="Davis County excavation contractor. Basement digs, grading, utility trenching, and demolition. Get a ballpark quote in 60 seconds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --soil:#241F1A;
+  --loam:#3A332B;
+  --cat:#FFC400;
+  --cat-dark:#E0AC00;
+  --day:#F5F3EE;
+  --line:#DCD7CC;
+  --ink:#241F1A;
+  --muted:#6A6258;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{font-family:'Barlow',sans-serif;color:var(--ink);background:var(--day);line-height:1.6;font-size:16px}
+h1,h2,h3,.disp{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.btn{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem;padding:14px 28px;border-radius:6px;text-decoration:none;border:none;cursor:pointer;transition:transform .12s ease,background .12s ease}
+.btn:active{transform:scale(.97)}
+.btn-cat{background:var(--cat);color:var(--soil)}
+.btn-cat:hover{background:var(--cat-dark)}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
+.btn-ghost:hover{border-color:#fff}
+.btn:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--cat);outline-offset:2px}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:50;background:var(--soil);color:#fff;border-bottom:3px solid var(--cat)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.4rem;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo svg{flex:none}
+.topnav{display:flex;gap:26px;align-items:center}
+.topnav a{text-decoration:none;font-weight:600;font-size:.95rem;opacity:.9}
+.topnav a:hover{opacity:1;color:var(--cat)}
+.call-link{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.15rem;color:var(--cat)!important;opacity:1!important;text-decoration:none}
+@media(max-width:760px){.topnav a:not(.call-link){display:none}}
+
+/* hero */
+.hero{background:linear-gradient(160deg,var(--soil) 0%,var(--loam) 100%);color:#fff;position:relative;padding:84px 0 140px;overflow:hidden}
+.hero .wrap{position:relative;z-index:2}
+.eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--cat);font-size:1rem;margin-bottom:14px}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;max-width:14ch}
+.hero p{margin:20px 0 30px;font-size:1.15rem;max-width:48ch;color:#DAD5CC}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+/* hazard stripe motif */
+.hazard{position:absolute;right:0;top:0;bottom:0;width:90px;background:repeating-linear-gradient(45deg,var(--cat) 0 24px,var(--soil) 24px 48px);opacity:.16;z-index:1}
+@media(max-width:760px){.hero{padding:56px 0 120px}.hazard{width:40px}}
+/* cut-earth divider — stepped trench profile instead of roof pitch */
+.trench{display:block;width:100%;height:70px;margin-top:-70px;position:relative;z-index:3}
+
+/* trust strip */
+.trust{background:var(--day);padding:34px 0 10px}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+.trust .t{border-top:3px solid var(--cat);padding-top:12px}
+.trust .num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.1rem;line-height:1}
+.trust .lab{font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+@media(max-width:760px){.trust .wrap{grid-template-columns:repeat(2,1fr)}}
+
+section{padding:72px 0}
+.sec-head{margin-bottom:40px;max-width:60ch}
+.sec-head h2{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:800}
+.sec-head p{color:var(--muted);margin-top:10px;font-size:1.05rem}
+
+/* services */
+.services{background:#fff}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.svc{background:var(--day);border:1px solid var(--line);border-radius:8px;padding:26px 22px;position:relative;overflow:hidden}
+.svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--soil)}
+.svc:hover::before{background:var(--cat)}
+.svc h3{font-size:1.35rem;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:.97rem}
+.svc .ico{width:44px;height:44px;margin-bottom:14px;color:var(--cat-dark)}
+
+/* gallery */
+.gallery{background:var(--soil);color:#fff}
+.gallery .sec-head p{color:#C2BCB1}
+.g-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.g-card{border-radius:8px;overflow:hidden;background:var(--loam)}
+.g-img{height:200px;display:flex;align-items:flex-end;padding:14px;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.95rem}
+.g-img.before{background:repeating-linear-gradient(0deg,#4d453a 0 14px,#443d33 14px 28px)}
+.g-img.after{background:repeating-linear-gradient(0deg,#2e2922 0 14px,#28231d 14px 28px),linear-gradient(180deg,rgba(255,196,0,.22),transparent)}
+.g-tag{background:rgba(0,0,0,.55);padding:4px 10px;border-radius:4px}
+.g-card .cap{padding:14px 16px;font-size:.92rem;color:#CFC9BE}
+.g-note{margin-top:18px;font-size:.85rem;color:#948C7F}
+
+/* areas */
+.areas{background:#fff}
+.area-tags{display:flex;flex-wrap:wrap;gap:10px}
+.area-tags span{background:var(--day);border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-weight:600;font-size:.95rem}
+
+/* reviews */
+.reviews{background:var(--day)}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px}
+.stars{color:var(--cat-dark);letter-spacing:2px;margin-bottom:10px}
+.rev p{font-size:.97rem}
+.rev .who{margin-top:14px;font-weight:600;font-size:.9rem;color:var(--muted)}
+
+/* quote chat */
+.quote{background:linear-gradient(160deg,var(--loam),var(--soil));color:#fff}
+.quote .sec-head p{color:#CCC6BB}
+.q-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+@media(max-width:860px){.q-layout{grid-template-columns:1fr}}
+.q-points{list-style:none;display:grid;gap:16px}
+.q-points li{display:flex;gap:12px;align-items:flex-start;font-size:1.02rem;color:#DAD5CC}
+.q-points .dot{flex:none;width:26px;height:26px;border-radius:50%;background:var(--cat);color:var(--soil);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;margin-top:2px}
+.chat{background:#fff;color:var(--ink);border-radius:12px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.chat-head{background:var(--soil);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:10px}
+.chat-head .pulse{width:9px;height:9px;border-radius:50%;background:#3ED66B;box-shadow:0 0 0 0 rgba(62,214,107,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(62,214,107,.5)}70%{box-shadow:0 0 0 9px rgba(62,214,107,0)}100%{box-shadow:0 0 0 0 rgba(62,214,107,0)}}
+.chat-head strong{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:1.05rem}
+.chat-body{height:380px;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px;background:#F1EFE9}
+.msg{max-width:82%;padding:11px 15px;border-radius:12px;font-size:.96rem;line-height:1.45}
+.msg.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.user{background:var(--cat);color:var(--soil);border-bottom-right-radius:4px;align-self:flex-end;font-weight:500}
+.msg.summary{background:var(--soil);color:#fff;max-width:100%;border-radius:8px}
+.msg.summary h4{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.05em;color:var(--cat);margin-bottom:8px;font-size:1.05rem}
+.msg.summary ul{list-style:none;font-size:.92rem;display:grid;gap:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-self:flex-start}
+.chip{background:#fff;border:1.5px solid var(--cat-dark);color:#8A6A00;border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;cursor:pointer;transition:background .12s,color .12s}
+.chip:hover{background:var(--cat);color:var(--soil)}
+.chat-input{display:flex;border-top:1px solid var(--line);background:#fff}
+.chat-input input{flex:1;border:none;padding:15px 16px;font-size:1rem;font-family:'Barlow',sans-serif;background:transparent}
+.chat-input button{border:none;background:var(--cat);color:var(--soil);padding:0 22px;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;font-size:1rem;cursor:pointer}
+.chat-input button:hover{background:var(--cat-dark)}
+.typing{display:inline-flex;gap:4px;padding:13px 16px;background:#fff;border:1px solid var(--line);border-radius:12px;border-bottom-left-radius:4px;align-self:flex-start}
+.typing i{width:7px;height:7px;border-radius:50%;background:#ABA396;animation:blink 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.3}40%{opacity:1}}
+
+/* footer */
+footer{background:var(--soil);color:#B5AFA4;padding:48px 0 100px;font-size:.92rem}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+@media(max-width:760px){footer .wrap{grid-template-columns:1fr}}
+footer h4{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;color:#fff;margin-bottom:12px;letter-spacing:.05em}
+footer a{text-decoration:none}
+footer a:hover{color:var(--cat)}
+footer ul{list-style:none;display:grid;gap:8px}
+.lic{margin-top:14px;font-size:.82rem;color:#867F73}
+
+/* sticky mobile call bar */
+.callbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--cat);color:var(--soil);text-align:center;padding:15px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:1.2rem;letter-spacing:.05em;text-decoration:none;box-shadow:0 -4px 16px rgba(0,0,0,.25)}
+@media(max-width:760px){.callbar{display:block}}
+</style>
+</head>
+<body>
+
+<nav class="topbar" aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Davis Dirtworks home">
+      <svg width="30" height="24" viewBox="0 0 30 24" fill="none" aria-hidden="true"><path d="M2 21 H28" stroke="#FFC400" stroke-width="3.4" stroke-linecap="round"/><path d="M6 21 V13 H13 V21 M13 13 L20 6 L24 10" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Davis Dirtworks
+    </a>
+    <div class="topnav">
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#areas">Service Area</a>
+      <a href="#quote">Get a Quote</a>
+      <a class="call-link" href="tel:8015550178">(801) 555-0178</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hazard" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow">Licensed &amp; Insured · Davis County, Utah</div>
+    <h1>We move the dirt so your build can start.</h1>
+    <p>Basement digs, pad grading, utility trenches, and teardowns — done on schedule with our own iron, not rented machines and excuses. Blue Stakes called before every job.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-cat" href="#quote">Get a ballpark in 60 seconds</a>
+      <a class="btn btn-ghost" href="tel:8015550178">Call (801) 555-0178</a>
+    </div>
+  </div>
+</header>
+<svg class="trench" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,10 0,7 30,7 35,2 65,2 70,7 100,7 100,10" fill="#F5F3EE"/></svg>
+
+<div class="trust" aria-label="Company stats">
+  <div class="wrap">
+    <div class="t"><div class="num">18</div><div class="lab">Years in the dirt</div></div>
+    <div class="t"><div class="num">900+</div><div class="lab">Sites prepped</div></div>
+    <div class="t"><div class="num">0</div><div class="lab">Utility strikes</div></div>
+    <div class="t"><div class="num">5 day</div><div class="lab">Avg basement dig</div></div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What we do</h2>
+      <p>Residential and light commercial sitework. The operator quoting your job is the one in the cab.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 20 H21 M5 20 V12 H12 V20" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12 L17 7 L20 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Basement &amp; Foundation Digs</h3>
+        <p>Full basement excavation, footings, and backfill with proper compaction. Dug to print, square, and ready for the concrete crew.</p>
+      </div>
+      <div class="svc">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 17 L21 13 M3 13 L21 9" stroke-linecap="round"/><path d="M4 21 H20" stroke-linecap="round"/></svg>
+        <h3>Grading &amp; Pads</h3>
+        <p>Lot grading, building pads, and drainage that moves water away from your foundation — not into your window wells.</p>
+      </div>
+      <div class="svc">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6 H20 M4 6 V18 M20 6 V18" stroke-linecap="round"/><path d="M8 18 V11 M12 18 V11 M16 18 V11" stroke-linecap="round" opacity=".5"/></svg>
+        <h3>Utility Trenching</h3>
+        <p>Water, sewer, power, and gas lines trenched to spec. Blue Stakes located, bedded right, inspected, and backfilled.</p>
+      </div>
+      <div class="svc">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 19 L12 5 L19 19" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 14 L16 14" stroke-linecap="round" opacity=".5"/></svg>
+        <h3>Demolition &amp; Hauling</h3>
+        <p>Garages, sheds, old concrete, problem trees. Torn out, loaded, and hauled — site left clean and ready for what's next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Recent work</h2>
+      <p>Every site documented start to finish — grade shots, compaction, and inspections you can hand straight to your builder.</p>
+    </div>
+    <div class="g-grid">
+      <div class="g-card">
+        <div class="g-img before"><span class="g-tag">Before — raw lot</span></div>
+        <div class="cap">Syracuse · half-acre lot cleared and rough graded · pad certified in 3 days</div>
+      </div>
+      <div class="g-card">
+        <div class="g-img after"><span class="g-tag">After — basement dig</span></div>
+        <div class="cap">Layton · 9-ft basement with garage cutout · footings dug, zero rework from the concrete crew</div>
+      </div>
+      <div class="g-card">
+        <div class="g-img after"><span class="g-tag">After — sewer lateral</span></div>
+        <div class="cap">Clearfield · 60-ft sewer replacement under an existing driveway · passed inspection first visit</div>
+      </div>
+    </div>
+    <p class="g-note">Demo note: placeholder graphics shown — your real job site photos go here.</p>
+  </div>
+</section>
+
+<section class="areas" id="areas">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Where we work</h2>
+      <p>Based in Clearfield. We haul our own equipment anywhere on the north Wasatch Front.</p>
+    </div>
+    <div class="area-tags">
+      <span>Clearfield</span><span>Layton</span><span>Syracuse</span><span>Kaysville</span><span>Farmington</span><span>Clinton</span><span>West Point</span><span>Roy</span><span>Hooper</span><span>Ogden</span>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What builders &amp; homeowners say</h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p>"Dug our basement dead square and had it ready two days early. Our concrete guys said it was the cleanest hole they'd seen all year."</p>
+        <div class="who">T. Brough · Syracuse</div>
+      </div>
+      <div class="rev">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p>"Replaced our sewer line without destroying the whole yard. Showed up when they said, charged what they quoted."</p>
+        <div class="who">K. Nielsen · Layton</div>
+      </div>
+      <div class="rev">
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <p>"We GC our own builds and have used them on six lots now. Grades are always right and they never hold up the schedule."</p>
+        <div class="who">Ridgepoint Homes · Davis County</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Get a ballpark in 60 seconds</h2>
+      <p>Answer a few questions and we'll text you a range today — then walk the site with you to firm up the number.</p>
+    </div>
+    <div class="q-layout">
+      <ul class="q-points">
+        <li><span class="dot">1</span><span><strong>Tell us about the job.</strong> Our smart intake asks what our estimator would — what's being dug, access, and timeline.</span></li>
+        <li><span class="dot">2</span><span><strong>Get a range fast.</strong> No waiting a week for a callback. You'll hear from us the same day, usually within the hour.</span></li>
+        <li><span class="dot">3</span><span><strong>Free site walk, real number.</strong> We look at access, soil, and slopes, then hand you an itemized bid. No surprises at invoice time.</span></li>
+      </ul>
+      <div class="chat" aria-label="Quote request chat">
+        <div class="chat-head"><span class="pulse" aria-hidden="true"></span><strong>Quote Assistant</strong><span style="margin-left:auto;font-size:.8rem;opacity:.7">replies instantly</span></div>
+        <div class="chat-body" id="chatBody" aria-live="polite"></div>
+        <div class="chat-input">
+          <input type="text" id="chatInput" placeholder="Type your answer…" aria-label="Your answer" autocomplete="off">
+          <button id="chatSend" type="button">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>Davis Dirtworks</h4>
+      <p>Excavation, grading, and demolition for Davis and Weber County. Our own iron, our own operators, your schedule.</p>
+      <p class="lic">UT Contractor License #0000000-5502 · Fully insured · Demo site — not a real business</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:8015550178">(801) 555-0178</a></li>
+        <li><a href="mailto:bids@davisdirtworks.com">bids@davisdirtworks.com</a></li>
+        <li>Clearfield, Utah</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Hours</h4>
+      <ul>
+        <li>Mon–Fri · 6:30am–5pm</li>
+        <li>Sat · by appointment</li>
+        <li>Builder accounts welcome</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:8015550178">📞 Tap to call — (801) 555-0178</a>
+
+<script>
+(function(){
+  const body = document.getElementById('chatBody');
+  const input = document.getElementById('chatInput');
+  const send = document.getElementById('chatSend');
+  const state = { step:0, answers:{} };
+
+  // Scripted intake flow. In the production version this is replaced by a
+  // serverless endpoint calling the Claude API, so follow-ups adapt to any answer.
+  const flow = [
+    { key:'job',    q:"Hi! I can get you a ballpark for your dirt work in about a minute. What kind of job is it?", chips:["Basement / foundation dig","Grading or building pad","Utility trench (water/sewer/power)","Demolition / hauling","Something else"] },
+    { key:'site',   q:"Got it. What's the site like right now?", chips:["Empty lot","Existing home / landscaping","New construction in progress","Not sure"] },
+    { key:'access', q:"How's equipment access? Can a machine get to the work area?", chips:["Wide open","Tight — fences or close neighbors","Backyard only","Not sure"] },
+    { key:'timing', q:"When do you need the work done?", chips:["ASAP — crew is waiting on me","Within a month","This season","Just budgeting"] },
+    { key:'name',   q:"Almost done. What's your name?", chips:null },
+    { key:'phone',  q:"And the best number to text your ballpark to?", chips:null }
+  ];
+
+  function el(cls, html){ const d=document.createElement('div'); d.className=cls; d.innerHTML=html; return d; }
+  function scroll(){ body.scrollTop = body.scrollHeight; }
+
+  function botSay(html, then){
+    const t = el('typing','<i></i><i></i><i></i>');
+    body.appendChild(t); scroll();
+    setTimeout(()=>{ t.remove(); body.appendChild(el('msg bot', html)); scroll(); if(then) then(); }, 650);
+  }
+
+  function showChips(options){
+    const c = document.createElement('div'); c.className='chips';
+    options.forEach(o=>{
+      const b=document.createElement('button'); b.type='button'; b.className='chip'; b.textContent=o;
+      b.onclick=()=>{ c.remove(); userSay(o); };
+      c.appendChild(b);
+    });
+    body.appendChild(c); scroll();
+  }
+
+  function ask(){
+    const step = flow[state.step];
+    botSay(step.q, ()=>{ if(step.chips) showChips(step.chips); else input.focus(); });
+  }
+
+  function userSay(text){
+    if(!text.trim()) return;
+    body.appendChild(el('msg user', escapeHtml(text))); scroll();
+    state.answers[flow[state.step].key]=text.trim();
+    state.step++;
+    if(state.step < flow.length){ ask(); } else { finish(); }
+  }
+
+  function finish(){
+    const a = state.answers;
+    botSay("Perfect — that's everything. Here's what we'll send to the estimator:", ()=>{
+      const s = el('msg summary',
+        '<h4>Lead Summary · sent to crew</h4><ul>'+
+        '<li><strong>Job:</strong> '+escapeHtml(a.job)+'</li>'+
+        '<li><strong>Site:</strong> '+escapeHtml(a.site)+'</li>'+
+        '<li><strong>Access:</strong> '+escapeHtml(a.access)+'</li>'+
+        '<li><strong>Timeline:</strong> '+escapeHtml(a.timing)+'</li>'+
+        '<li><strong>Contact:</strong> '+escapeHtml(a.name)+' · '+escapeHtml(a.phone)+'</li></ul>');
+      body.appendChild(s); scroll();
+      botSay("Thanks, "+escapeHtml(a.name.split(' ')[0])+"! You'll get a text with your ballpark today. If your crew is waiting on the dirt, call us right now at <a href='tel:8015550178'><strong>(801) 555-0178</strong></a>.");
+    });
+  }
+
+  function escapeHtml(s){ return s.replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  send.addEventListener('click', ()=>{ userSay(input.value); input.value=''; });
+  input.addEventListener('keydown', e=>{ if(e.key==='Enter'){ userSay(input.value); input.value=''; } });
+
+  ask();
+})();
+</script>
+</body>
+</html>
